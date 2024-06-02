@@ -16,7 +16,7 @@ const Hero = () => {
                 <Link to={'/cinema'}>cinema</Link>
               </h2>
               <div className="hero-img-1">
-                <img src="/public/hero-1.webp" alt="img" />
+                <img src="/hero-1.webp" alt="img" />
 
               </div>
             </div>
@@ -32,7 +32,7 @@ const Hero = () => {
                 </Link>
               </h2>
               <div className="hero-img-2">
-                <img src="/public/hero-2.webp" alt="img" />
+                <img src="/hero-2.webp" alt="img" />
 
               </div>
             </div>
