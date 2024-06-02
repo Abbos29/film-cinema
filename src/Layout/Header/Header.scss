@@ -6,6 +6,8 @@
         justify-content: space-between;
         align-items: center;
         gap: 20px;
+
+        position: relative;
     }
     /* .header__logo */
     &__logo {
@@ -33,11 +35,29 @@
         background: none;
         position: relative;
         z-index: 6;
+        padding: 12px;
 
         span {
             width: 30px;
             height: 2px;
             background-color: #fff;
+            transition: all 0.4s;
+        }
+
+        &.active {
+            :nth-child(1) {
+                rotate: 45deg;
+                translate: 0px 4px;
+            }
+            :nth-child(2) {
+                rotate: -45deg;
+                translate: 0px -4px;
+            }
+
+            rotate: 0deg;
+            &:hover {
+                animation: rotate 0.4s ease-in;
+            }
         }
     }
     /* .header__menu */
@@ -54,9 +74,11 @@
         display: grid;
         place-items: center;
         align-content: center;
-        gap: 40px;
+        gap: 35px;
 
-        transition: all 0.7s cubic-bezier(0.8, 0.5, 0.5, 0.8);;
+        transition: all 0.7s cubic-bezier(0.8, 0.5, 0.5, 0.8);
+
+        background-color: rgb(19, 19, 19, 1);
 
         &.active {
             right: 0;
@@ -69,6 +91,10 @@
         display: flex;
         gap: 50px;
 
+        @media (max-width: 768px) {
+            flex-direction: column;
+        }
+
         a {
             color: #fff;
             font-size: 60px;
@@ -79,6 +105,7 @@
             justify-content: center;
             align-items: center;
             transition: all 0.8s;
+            letter-spacing: 4px;
 
             &:hover {
 
@@ -95,6 +122,76 @@
                 transition: all 0.8s;
 
             }
+
+
+            @media (max-width: 992px) {
+                font-size: 40px;
+            }
+            @media (max-width: 768px) {
+                font-size: 30px;
+            }
         }
+    }
+
+    &__footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 15px;
+        width: 100%;
+        padding: 30px;
+
+        margin-top: auto;
+
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        // max-width: 1200px;
+        margin: 0 auto;
+
+        border-top: 1px solid rgba(211, 211, 211, 0.704);
+
+        @media (max-width: 768px) {
+            flex-wrap: wrap;
+        }
+
+    }
+
+    &__box {
+        display: flex;
+        gap: 15px;
+        p {
+            color: #ffffffc7;
+            font-size: 8px;
+    
+        }
+
+        
+    }
+
+
+    &__menu-btns {
+        display: none;
+        @media (max-width: 768px) {
+            display: block;
+        }
+    }
+
+    &__nav-btns {
+        margin-left: auto;
+        @media (max-width: 768px) {
+            display: none;
+        }
+    }
+}
+
+
+
+
+
+
+@keyframes rotate {
+    100% {
+        rotate: 90deg;
     }
 }

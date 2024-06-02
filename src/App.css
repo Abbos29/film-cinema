@@ -12,6 +12,8 @@ body {
   background-image: url(/public/bg.jpg);
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: top;
+  height: 100dvh;
   /* background-position: center; */
 
 }
