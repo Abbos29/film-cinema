@@ -1,0 +1,64 @@
+.cinema {
+    overflow: hidden;
+    /* .cinema__wrapper */
+    &__wrapper {
+        max-width: 1000px;
+        width: 100%;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 60px;
+        margin-top: 40px;
+        overflow: hidden;
+        position: relative;
+        // padding-bottom: 150px;
+        padding-bottom: 200px;
+        :first-child {
+            margin-top: 50px;
+        }
+        :last-child {
+            margin-top: 50px;
+        }
+    }
+    /* .cinema__card */
+    &__card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+
+        img {
+            width: 100%;
+            height: 320px;
+            object-fit: cover;
+        }
+
+        p {
+            position: absolute;
+            bottom: -100px;
+            left: 50%;
+            translate: -50% 0;
+            max-width: 390px;
+            width: 100%;
+            margin: 0 auto;
+            font-size: 30px;
+            opacity: 0;
+            transition: all 0.5s;
+            line-height: 1.2;
+            font-weight: 600;
+            color: #fff;
+            letter-spacing: 2px;
+            visibility: hidden;
+        }
+
+        &:hover {
+            p {
+                opacity: 1;
+                bottom: 50px;
+                visibility: visible;
+            }
+        }
+    }
+}
+.container {
+}
