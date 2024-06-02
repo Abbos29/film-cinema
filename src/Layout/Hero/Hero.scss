@@ -1,0 +1,187 @@
+.hero {
+    /* .hero__wrapper */
+    &__wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        place-items: center;
+
+        padding-top: 100px;
+
+        @media (max-width: 992px) {
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+    }
+    /* .hero__box */
+    &__box {
+        position: relative;
+
+        display: flex;
+        align-items: center;
+        width: 100%;
+        max-width: 200px;
+        flex-direction: column;
+        justify-content: center;
+
+        @media (max-width: 992px) {
+            flex-direction: column-reverse;
+            gap: 30px;
+        }
+
+        a {
+            color: #fff;
+        }
+
+        img {
+            max-width: 200px;
+            width: 100%;
+            z-index: 1;
+            box-shadow: 1px 1px 30px 10px rgba(0, 0, 0, 0.4);
+
+            animation: bounce 2s infinite alternate-reverse ease;
+            position: relative;
+            top: 0;
+            transition: all 0.6s;
+
+            @media (max-width: 992px) {
+                animation: none;
+                transition: none;
+            }
+        }
+
+        .hero-img-1 {
+            perspective: 700px;
+
+            img {
+                transform: rotateY(25deg);
+            }
+
+            @media (max-width: 992px) {
+                perspective: 0px;
+                img {
+                    transform: none;
+                }
+            }
+        }
+
+        .hero-img-2 {
+            perspective: 700px;
+
+            img {
+                transform: rotateY(-25deg);
+            }
+
+            @media (max-width: 992px) {
+                perspective: 0px;
+                img {
+                    transform: none;
+                }
+            }
+        }
+
+        h2 {
+            position: absolute;
+            top: 150px;
+            color: #fff;
+            // font-size: 80px;
+            font-size: clamp(3.75rem, -2.212rem + 9.62vw, 5rem);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-weight: 700;
+
+            align-items: center;
+            z-index: 2;
+
+            @media (max-width: 992px) {
+                position: static;
+            }
+            @media (max-width: 768px) {
+                font-size: 38px;
+            }
+        }
+
+        @media (hover: hover) {
+            &:hover {
+                img {
+                    position: relative;
+                    top: -20px;
+                }
+
+                .hero-img-1 {
+                    img {
+                        transform: rotateY(5deg);
+                    }
+                }
+
+                .hero-img-2 {
+                    img {
+                        transform: rotateY(-5deg);
+                    }
+                }
+            }
+        }
+    }
+
+    &__inner {
+        color: #fff;
+        position: relative;
+        top: -100px;
+        text-align: center;
+        font-style: italic;
+        font-size: 20px;
+        p {
+            font-family: "Times New Roman", Times, serif;
+        }
+
+        @media (max-width: 992px) {
+            position: static;
+            padding: 50px 0;
+        }
+    }
+
+    &__or {
+
+        display: none;
+
+        @media (max-width: 992px) {
+            display: block;   
+        }
+        
+        p {
+            font-style: italic;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 18px;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            &::after {
+                content: '';
+                width: 80px;
+                height: 1px;
+                background-color: #fff;
+            opacity: 0.4;
+
+            }
+            &::before {
+                content: '';
+                width: 80px;
+                height: 1px;
+                background-color: #fff;
+            opacity: 0.4;
+
+            }
+        }
+    }
+}
+
+@keyframes bounce {
+    0% {
+        translate: 0px -10px;
+    }
+    100% {
+        translate: 0px 10px;
+    }
+}
