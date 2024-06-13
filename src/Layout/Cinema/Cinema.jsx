@@ -1,32 +1,31 @@
 // import React from 'react'
+import { Link } from 'react-router-dom'
 import './Cinema.scss'
 
+import dataFilms from '../../db/data'
+
+
 const Cinema = () => {
+
+  // console.log(dataFilms);
+
   return (
     <section className="cinema">
-        <div className="container">
-            <div className="cinema__wrapper">
-              <div className="cinema__card">
-                <img src="/cinema-1.webp" alt="img" />
-                <p>Echoes of Eternity's Silent Symphony</p>
-              </div>
+      <div className="container">
+        <div className="cinema__wrapper">
 
+          {dataFilms.map((card) => (
+            <Link key={card.id} to={`/film/${card.id}`}>
               <div className="cinema__card">
-                <img src="/cinema-2.webp" alt="img" />
-                <p>Whispers of Time's Forgotten Tales</p>
+                <img src={`${card.image}`} alt="img" />
+                <p>{card.title}</p>
+                <b>{card.rating}</b>
               </div>
+            </Link>
+          ))}
 
-              <div className="cinema__card">
-                <img src="/cinema-3.webp" alt="img" />
-                <p>Shadows of Dawn's First Light</p>
-              </div>
-
-              <div className="cinema__card">
-                <img src="/cinema-4.webp" alt="img" />
-                <p>Ephemeral Dreams of Distant Stars</p>
-              </div>
-            </div>
         </div>
+      </div>
     </section>
   )
 }

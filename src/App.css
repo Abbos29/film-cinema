@@ -14,7 +14,7 @@ body {
   &:has(.header__menu.active) {
     overflow: hidden;
   }
-  
+
 }
 
 .bg {
@@ -27,6 +27,8 @@ body {
   /* background-position: center; */
   background-color: #000;
 
+  
+
   @media (max-width: 992px) {
     background-position: center !important;
     background-size: cover !important;
@@ -35,15 +37,36 @@ body {
 
   &:has(.main-body.fade-exit) {
     background-image: url(/public/bg-color.jpg);
-    filter: drop-shadow(1px 1px 100px rgb(0, 0, 0,));
+    filter: drop-shadow(1px 1px 100px rgb(0, 0, 0, ));
   }
+
   &:has(.main-body.fade-enter-done) {
     /* background-image: url(/public/bg1.jpg); */
     filter: drop-shadow(1px 1px 100px rgba(0, 0, 0, 0));
+    overflow-x: hidden;
+    overflow-y: visible;
   }
+
   &:has(.cinema) {
     background-image: url(/public/bg3.jpg);
     box-shadow: 1px 1px 500px 200px rgba(0, 0, 0, 0.457) inset;
+  }
+
+  &:has(.product-1) {
+    box-shadow: 800px 0px 200px 80px rgba(0, 0, 0, 0.8) inset;
+    background-image: url(https://assets.americancinematheque.com/wp-content/uploads/2021/05/23013636/Lawrence-of-Arabia.png);
+  }
+  &:has(.product-2) {
+    box-shadow: 800px 0px 200px 80px rgba(0, 0, 0, 0.8) inset;
+    background-image: url(https://www-images.christianitytoday.com/images/72461.jpg);
+  }
+  &:has(.product-3) {
+    box-shadow: 800px 0px 200px 80px rgba(0, 0, 0, 0.8) inset;
+    background-image: url(https://static1.colliderimages.com/wordpress/wp-content/uploads/2024/01/gone-with-the-wind-1939-poster-1.jpg);
+  }
+  &:has(.product-4) {
+    box-shadow: 800px 0px 200px 80px rgba(0, 0, 0, 0.8) inset;
+    background-image: url(https://uptv.com/wp-content/uploads/2017/10/the-ten-commandments-movie-1920x1080-1.jpg);
   }
 }
 
@@ -131,13 +154,16 @@ body {
   opacity: 0;
   transition: all 1.5s;
 }
+
 .fade-enter-active {
   opacity: 1;
 }
+
 .fade-exit {
   opacity: 1;
   transition: all 1.5s;
 }
+
 .fade-exit-active {
   opacity: 0;
 }
@@ -155,6 +181,7 @@ body {
   height: 100dvh;
 
   transition: all 1.5s;
+
   @media (max-width: 992px) {
     position: static;
     height: auto;

@@ -5,6 +5,7 @@ import routes from './routes'
 import Header from './Layout/Header/Header'
 import { useState } from 'react'
 import { CSSTransition, SwitchTransition } from 'react-transition-group'
+import { HelmetProvider } from 'react-helmet-async'
 
 const App = () => {
 
@@ -39,7 +40,9 @@ const App = () => {
           >
             <div className='main-body'>
               <Header />
-              {routing}
+              <HelmetProvider>
+                {routing}
+              </HelmetProvider>
 
             </div>
 

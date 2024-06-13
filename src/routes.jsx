@@ -1,5 +1,6 @@
 import CinemaPage from "./Pages/CinemaPage";
 import HomePage from "./Pages/HomePage";
+import ProductPage from "./Pages/ProductPage";
 
 const routes = [
     {
@@ -9,6 +10,10 @@ const routes = [
     {
         path: '/cinema',
         element: <CinemaPage />
+    },
+    {
+        path: '/film/:id',
+        element: <ProductPage />
     },
 
 ]
